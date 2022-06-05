@@ -1,0 +1,107 @@
+# Changelog
+
+
+## [0.0.9] - 2020-11-30_1
+### Added
+- 1 to CHR ROM so year 2021 can be drawn if need be
+
+### Fixed
+- Replace 0x1d, 0x1e, and 0x1f in title.nam with 0x00
+
+
+## [0.0.8] - 2020-11-30_0
+### Added
+- Clearing a board adds time to timer in Score Mode
+
+### Changed
+- Score and Top Score to 4 digits instead of 2 in Score Mode
+- Timer decrements instead of increments in Score Mode
+
+### Fixed
+- Set version number to 0 in current.txt if new date in proto-date program
+
+
+## [0.0.7] - 2020-11-25_1
+### Added
+- Implement End Position option, which chooses a random end tile position that is the opposite color of the starting knight position
+
+### Changed
+- Place _V at the end of dates in CHANGELOG.txt to match YYYYMMDD_V format of ROMs in bin/demo and PROTO content of the title screens in CHR ROM
+- Refactor option value in memory toggle code
+- Refactor option ON/OFF draw code
+- Refactor option ON/OFF toggle controller code
+
+
+## [0.0.6] - 2020-11-25_0
+### Added
+- Add proto-date.go, proto-date, and current.txt file to automate the PROTO content on the title screen in CHR ROM, updating YYYYMMDD_V with correct date and version
+- Add setup rule to Makefile, which is used to automatically update the PROTO YYYYMMDD_V content of the title screen in CHR ROM.
+- Add save rule to Makefile, which copies bin/a-knights-tour.nes to bin/demo/a-knights-tour-YYYYMMDD_V.nes
+
+### Changed
+- Re-order Makefile rules to make them more correct to order used in command line
+- Assume dates for CHANGELOG.txt and the PROTO YYYYMMDD_V content of the title screen in CHR ROM are based on UTC time.
+
+### Fixed
+- Change FIXED to Fixed on [0.0.5]
+
+
+## [0.0.5] - 2020-11-24_0
+### Fixed
+- Decouple main code from NMI
+- Initialize Can Fall option at POWER ON
+- Keep Invisible Guides option on RESET
+- Blank screen by blacking out entire palette during screen change
+- Remove version from PROTO content on title screen in CHR ROM, keeping only PROTO-YYYYMMDD_V
+
+
+## [0.0.4] - 2020-09-11_0
+### Added
+- Implement Can Fall option, which allows the user to choose to go to a broken tile, which ends the game
+- Implement Invisible Guides option, which makes the dotted lines and all corners of the 8 guide positions invisible
+
+
+## [0.0.3] - 2020-09-10_0
+### Added
+- Add SNES Mouse support for title screen
+- Add Options Menu
+- Add SNES Mouse support for Options Menu
+- Implement Left Handed option
+- Implement Invisible Cracks option
+- Make Left Handed option work for Standard Controller, SNES Mouse, and Power Pad
+- Add Polyglot (ZIP) File Functionality. Make first 40KB + 16B of file NES ROM data and rest of data valid ZIP file data that contains the source code for the ROM.
+- Add zip argument for Makefile to make NES+ZIP polyglot file
+
+### Fixed
+- Change [0.0.4] to [0.0.2] for 2020-09-07 build.
+
+
+## [0.0.2] - 2020-09-07_0
+### Added
+- Title screen
+- Ability to start score mode from title screen
+- Standard Controller, Power Pad, and SNES Mouse controller support for starting score mode only (movement in title screen not yet implemented)
+
+### Fixed
+- Fix bug where corners may be off the center while the knight is animating (Bug reappeared and was possibly not properly patched initially)
+- Fix bug where plugging in SNES mouse after the board is started will cause an infinite click glitch
+- 0.0.1 date from 2020-09-04 to 2020-09-05
+
+
+## [0.0.1] - 2020-09-05_0
+### Added
+- Power Pad support - 4 = A, 2/3 = Up, 10/11 = Down, 5 = Left, 8 = Right
+- Random Number Generator (RNG)
+- Seed RNG entropy with button inputs
+- Use RNG to randomize knight starting position when making a new board
+- Use RNG to randomize which position is selected on the board when making a new board
+
+### Fixed
+- Fix bug where top score remaining even if that board round is not finished and game is reset
+- Fix bug where corners may be off the center while the knight is animating
+- Fix bug where dotted lines appear 1 frame after board is drawn for 1 frame when the controller is set to SNES Mouse
+
+
+## [0.0.0] - 2020-09-03_0
+### Added
+- Initial Release
