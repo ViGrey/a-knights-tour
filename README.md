@@ -11,4 +11,6 @@ The assembler I was using was asm6. You'll probably have to build asm6 from sour
 
 If I remember correctly, I have Standard NES controller, NES Power Pad, and SNES Mouse support built in already.
 
-My apologies for so few comments.
+My apologies for so few comments in the code.
+
+The ROM is build for NES-NROM-256 or HVC-NROM-256 board types for the NES or Famicom.  The mirroring should be able to be either Verticle or Horizontal in the current form of the ROM.
